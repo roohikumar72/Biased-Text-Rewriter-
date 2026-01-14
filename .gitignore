@@ -1,0 +1,49 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+.venv/
+
+# Model files
+backend/models/
+*.bin
+*.pt
+*.safetensors
+tokenizer.json
+tokenizer_config.json
+config.json
+special_tokens_map.json
+
+# Environment variables
+.env
+
+# Logs and DB
+*.log
+*.sqlite3
+
+# virtual environment
+venv/
+.env
+
+# model artifacts
+*.bin
+*.pt
+*.safetensors
+*.h5
+*.onnx
+training/bert-bias/
+backend/training/bert-bias/
+
+# huggingface cache
+.cache/
+.huggingface/
+
+# python cache
+__pycache__/
+*.pyc
+
+# OS files
+.DS_Store
+Thumbs.db

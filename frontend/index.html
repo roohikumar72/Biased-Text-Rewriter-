@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Inclusive Text Assistant</title>
+</head>
+<body>
+  <h2>Bias Detection & Inclusive Rewriting</h2>
+
+  <textarea id="text" rows="5" cols="60"></textarea><br><br>
+  <button onclick="analyze()">Analyze</button>
+
+  <p id="result"></p>
+  <p id="rewrite"></p>
+
+  <script>
+    async function analyze() {
+      const text = document.getElementById("text").value;
+      const res = await fetch("http://127.0.0.1:5000/analyze", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({text})
+      });
+      const data = await res.json();
+      document.getElementById("result").innerText = "Label: " + data.label;
+      document.getElementById("rewrite").innerText = data.rewritten || "";
+    }
+  </script>
+</body>
+</html>
